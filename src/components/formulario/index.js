@@ -9,7 +9,7 @@ const Formulario = () => {
     function onSubmit(values, actions) {
         Swal.fire(
             'Good job!',
-            'Você completou o formulário!',
+            'Você completou o formulário!!',
             'success'
           );
         console.log( 'SUBMIT: ',values)
