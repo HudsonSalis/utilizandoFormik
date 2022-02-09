@@ -25,6 +25,59 @@ export const ConteudoForm = styled.div`
         flex-direction: column;
         justify-content: center;
     }
+    .informative-Text{
+        font-size: 13px;
+    }
+
+    .input-Form{
+        font-family: 'Roboto', sans-serif;
+        width: 350px;
+        padding: 5px;
+        margin-top: 15px;
+       
+    }
+    label{
+        margin-top: 15px;
+    }
+    .input-Form-Invalid{
+        font-family: 'Roboto', sans-serif;
+        width: 350px;
+        border-color: red;
+        margin-top: 15px;
+    }
+
+    .nao-sei-Cep{
+        position: absolute;
+        right: 20px;
+        top: 30px;
+        font-size: 17px;
+        color: red;
+        cursor: pointer;
+    }
+    .buscaCep{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid red;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }
+
+    .site-Cep{
+        position: absolute;
+        font-size: 13px;
+        margin-top: 14px;
+        margin-left: -40px;
+        width: 150px;
+    }
+
+    .teste{
+        color:red;
+        font-size: 13px;
+        
+    }
 `;
 
 export const Titulo = styled.div`
@@ -51,64 +104,13 @@ export const FormOption = styled.div`
     display: flex;
     flex-direction: column;
 
-    .nao-sei-Cep{
-        position: absolute;
-        margin-top: 34px;
-        margin-right: 10px;
-        align-self: end;
-        font-size: 17px;
-        color: red;
-        cursor: pointer;
-    }
-
-    .site-Cep{
-        position: absolute;
-        margin-top: 8px;
-        margin-left: -70px;
-        width: 150px;
-    }
-
-    .spanObrigatorio{
-        color: red;
-    }
-
     label{
-        margin-top: 5px;
-        margin-bottom: 3px;
-        font-family: 'Roboto', sans-serif;
-
+        margin-top: 15px;
     }
-
-    .input-Form{
-        font-family: 'Roboto', sans-serif;
-        width: 350px;
-        margin-top: 2px;
-        padding: 7px;
-        
-    }
-
-    .input-Form-Invalid{
-        font-family: 'Roboto', sans-serif;
-        width: 350px;
-        margin-top: 2px;
-        padding: 7px;
-        border-color: rgba(250,10,10);
-        border-radius: 5px;
-    }
-
-    .teste{
-
-        color:red;
-
-        &:focus{
-            color: black;
-        }
-      }
       
-
     select{
+        margin-top: 5px;
         padding: 5px;
-        border-color: rgba(0,50,190,0.4);
         border-radius: 5px;
     }
 `;
@@ -119,13 +121,13 @@ export const Button = styled.button`
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 15px;
-
     border: none;
 
     border-radius: 20px;
     width: 200px;
     align-self: center;
     cursor: pointer;
+    transition: 0.2s;
 
     &:hover{
         background-color: rgba(0,50,190,0.7)

@@ -70,11 +70,13 @@ const Formulario = () => {
                         
                         <Form className="Form">
                         
-                            <S.FormOption>
-                                <label> CEP <span className="spanObrigatorio">*</span> </label>
-                                <Field className={ errors.cep && touched.cep ? "input-Form-Invalid" : "input-Form"} name="cep" type="text" onBlur={(ev) => onBlurCep(ev, setFieldValue)} />
+                            <div className="informative-Text">Digite seu cep e seus dados serão carregados automaticamente</div>
+                            <div className="form-floating">
+                                <Field id="floatInput" placeholder="Cep" className={ errors.cep && touched.cep ? "input-Form-Invalid form-control" : "input-Form form-control"} name="cep" type="text" onBlur={(ev) => onBlurCep(ev, setFieldValue)} />
+                                <label htmlFor="floatInput"> Cep * </label>
+
                                 <div className="nao-sei-Cep">
-                                    <div type="submit" onClick={showOrHide}>?</div>
+                                    <div className="buscaCep" type="submit" onClick={showOrHide}>?</div>
                                     { showElement ? 
                                         <div className="site-Cep">
                                             <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" rel="noreferrer" target="_blank">Não sabe seu Cep?
@@ -83,43 +85,47 @@ const Formulario = () => {
                                     
                                 </div>
                                 <ErrorMessage component="div" className="teste"  name="cep" />
-                            </S.FormOption>
+                            </div>
             
-                            <S.FormOption>
-                                <label> RUA <span className="spanObrigatorio">*</span></label>
-                                <Field className={ errors.rua && touched.rua ? "input-Form-Invalid" : "input-Form"} name="rua" type="text" />                
+                            <div className="form-floating">
+                                <Field placeholder="Rua" id="inputFloat" className={ errors.rua && touched.rua ? "input-Form-Invalid form-control" : "input-Form form-control"} name="rua" type="text" />                
+                                <label htmlFor="inputFloat"> Rua * </label>
+
                                 <ErrorMessage component="div" className="teste" name="rua" />
                                 
-                               
-                                
-                            </S.FormOption>
+                            </div>
             
-                            <S.FormOption>
-                                <label> NÚMERO <span className="spanObrigatorio">*</span></label>
-                                <Field className={ errors.numero && touched.numero ? "input-Form-Invalid" : "input-Form"} name="numero" type="text" />
+                            <div className="form-floating">
+                                <Field placeholder="Número" id="floatInput" className={ errors.numero && touched.numero ? "input-Form-Invalid form-control" : "input-Form form-control"} name="numero" type="text" />
+                                <label htmlFor="floatInput"> Número *</label>
+
                                 <ErrorMessage component="div" className="teste" name="numero" />
-                            </S.FormOption>
+                            </div>
             
-                            <S.FormOption>
-                                <label> COMPLEMENTO </label>
-                                <Field className="input-Form" name="complemento" type="text" />
+                            <div className="form-floating">
+                                <Field id="inputFloat" placeholder="Complemento" className="input-Form form-control" name="complemento" type="text" />
+                                <label htmlFor="inputFloat"> Complemento </label>
+
                                 <ErrorMessage name="complemento" />
-                            </S.FormOption>
+                            </div>
             
-                            <S.FormOption>
-                                <label> BAIRRO <span className="spanObrigatorio">*</span></label>
-                                <Field className={ errors.bairro && touched.bairro ? "input-Form-Invalid" : "input-Form"} name="bairro" type="text" />
+                            <div className="form-floating">
+                                <Field id="floatInput" placeholder="Bairro" className={ errors.bairro && touched.bairro ? "input-Form-Invalid form-control" : "input-Form form-control"} name="bairro" type="text" />
+                                <label htmlFor="floatInput"> Bairro *</label>
+
                                 <ErrorMessage component="div" className="teste"  name="bairro" />
-                            </S.FormOption>
+                            </div>
             
-                            <S.FormOption>
-                                <label> CIDADE <span className="spanObrigatorio">*</span></label>
-                                <Field  className={ errors.cidade && touched.cidade ? "input-Form-Invalid" : "input-Form"} name="cidade" type="text" />
+                            <div className="form-floating">
+                                <Field  id="floatInput"  placeholder="Cidade" className={ errors.cidade && touched.cidade ? "input-Form-Invalid form-control" : "input-Form form-control"} name="cidade" type="text" />
+                                <label htmlFor="floatInput"> Cidade *</label>
+
                                 <ErrorMessage component="div" className="teste"  name="cidade" />
-                            </S.FormOption>
+                            </div>
             
                             <S.FormOption>
-                                <label> ESTADO <span className="spanObrigatorio">*</span></label>
+                                <label> Estado *</label>
+                                
                                 <Field  component="select" name="uf">   
                                     <option value="SP">São Paulo</option>
                                     <option value="MG">Minas Gerais </option>
