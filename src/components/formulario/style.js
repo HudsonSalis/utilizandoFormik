@@ -84,7 +84,7 @@ export const FormOption = styled.div`
         width: 350px;
         margin-top: 2px;
         padding: 7px;
-        border-radius: 5px;
+        
     }
 
     .input-Form-Invalid{
@@ -99,6 +99,10 @@ export const FormOption = styled.div`
     .teste{
 
         color:red;
+
+        &:focus{
+            color: black;
+        }
       }
       
 
@@ -114,7 +118,7 @@ export const Button = styled.button`
     background-color: rgba(114, 208, 6, 1);
     padding: 10px;
     margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 
     border: none;
 

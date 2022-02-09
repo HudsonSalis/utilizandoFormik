@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import {Formik, Field, Form, ErrorMessage} from 'formik';
 import schema from '../schema/schema';
 import * as S from './style';
-const Swal = require('sweetalert2');
+
 
 const Formulario = () => {
 
+    
     function onSubmit(values, actions) {
+        const Swal = require('sweetalert2');
         Swal.fire(
             'Good job!',
-            'Você completou o formulário!',
+            'Você completou o formulário!!',
             'success'
           );
         console.log( 'SUBMIT: ',values)
@@ -64,13 +66,13 @@ const Formulario = () => {
                     }}
                 >
                     {
-                        ( { isValid, setFieldValue } ) => (
+                        ( { isValid, errors, touched,setFieldValue } ) => (
                         
                         <Form className="Form">
                         
                             <S.FormOption>
                                 <label> CEP <span className="spanObrigatorio">*</span> </label>
-                                <Field className="input-Form" name="cep" type="text" onBlur={(ev) => onBlurCep(ev, setFieldValue)} />
+                                <Field className={ errors.cep && touched.cep ? "input-Form-Invalid" : "input-Form"} name="cep" type="text" onBlur={(ev) => onBlurCep(ev, setFieldValue)} />
                                 <div className="nao-sei-Cep">
                                     <div type="submit" onClick={showOrHide}>?</div>
                                     { showElement ? 
@@ -85,16 +87,16 @@ const Formulario = () => {
             
                             <S.FormOption>
                                 <label> RUA <span className="spanObrigatorio">*</span></label>
-                                <Field className="input-Form" name="rua" type="text" />
-                    
+                                <Field className={ errors.rua && touched.rua ? "input-Form-Invalid" : "input-Form"} name="rua" type="text" />                
                                 <ErrorMessage component="div" className="teste" name="rua" />
+                                
                                
                                 
                             </S.FormOption>
             
                             <S.FormOption>
                                 <label> NÚMERO <span className="spanObrigatorio">*</span></label>
-                                <Field className="input-Form" name="numero" type="text" />
+                                <Field className={ errors.numero && touched.numero ? "input-Form-Invalid" : "input-Form"} name="numero" type="text" />
                                 <ErrorMessage component="div" className="teste" name="numero" />
                             </S.FormOption>
             
@@ -106,13 +108,13 @@ const Formulario = () => {
             
                             <S.FormOption>
                                 <label> BAIRRO <span className="spanObrigatorio">*</span></label>
-                                <Field className="input-Form" name="bairro" type="text" />
+                                <Field className={ errors.bairro && touched.bairro ? "input-Form-Invalid" : "input-Form"} name="bairro" type="text" />
                                 <ErrorMessage component="div" className="teste"  name="bairro" />
                             </S.FormOption>
             
                             <S.FormOption>
                                 <label> CIDADE <span className="spanObrigatorio">*</span></label>
-                                <Field  className="input-Form" name="cidade" type="text" />
+                                <Field  className={ errors.cidade && touched.cidade ? "input-Form-Invalid" : "input-Form"} name="cidade" type="text" />
                                 <ErrorMessage component="div" className="teste"  name="cidade" />
                             </S.FormOption>
             
